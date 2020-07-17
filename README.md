@@ -1,6 +1,6 @@
 # Tracey Bot - Digital Engagement Expansion Pack for Work.com Contact Tracing
 
-Tracey helps you blah blah blah
+Tracey is an Einstein AI Chatbot that conducts contact tracing across your organization of employees and external contacts. Quickly scale up any contact tracing initiative by using a conversational chatbot to automatically notify and solicit feedback from the entire workforce. Tracey then goes to work creating the tracing web, leading to instant notifications that prevent further exposuress.
 
 ## Outbound notifications when employees are exposed
 
