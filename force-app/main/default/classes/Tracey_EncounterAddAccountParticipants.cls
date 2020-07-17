@@ -40,7 +40,7 @@ global with sharing class Tracey_EncounterAddAccountParticipants
                         }
                     }
                     
-                    if (newCEPs.size() > 0)
+                    if (newCEPs.size() > 0 && Schema.sObjectType.ContactEncounterParticipant.isCreateable())
                     {
                         INSERT newCEPs;
                     }

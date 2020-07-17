@@ -112,6 +112,7 @@
         </mlSlotClasses>
         <name>Tracey</name>
     </botMlDomain>
+    <botUser>cgilmore@workde.demo</botUser>
     <contextVariables>
         <dataType>Text</dataType>
         <developerName>ChatKey</developerName>
