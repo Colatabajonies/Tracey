@@ -356,8 +356,10 @@
             <label>Is Tracey Enabled External</label>
         </rules>
     </decisions>
-    <interviewLabel>Tracey_Outbound_Notification_Traces-4_InterviewLabel</interviewLabel>
-    <label>Tracey - Outbound Notification Traces</label>
+    <description>Use this template to enable outbound messaging notifications for Tracey Bot</description>
+    <interviewLabel>TRACEY__Tracey_Outbound_Notification_Traces-2_InterviewLabel</interviewLabel>
+    <isTemplate>true</isTemplate>
+    <label>Tracey - Outbound Trace Notification (Template)</label>
     <processMetadataValues>
         <name>ObjectType</name>
         <value>
@@ -384,7 +386,7 @@
     </processMetadataValues>
     <processType>Workflow</processType>
     <startElementReference>myDecision</startElementReference>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>

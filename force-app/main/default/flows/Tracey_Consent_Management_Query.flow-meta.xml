@@ -55,6 +55,22 @@
             </value>
         </assignmentItems>
     </assignments>
+    <assignments>
+        <name>Set_Lead</name>
+        <label>Set Lead</label>
+        <locationX>589</locationX>
+        <locationY>212</locationY>
+        <assignmentItems>
+            <assignToReference>AcctLead</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Lead</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Program_Enrollee_Lead</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <name>Account_or_Lead</name>
         <label>Account or Lead</label>
@@ -87,7 +103,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Program_Enrollee_Lead</targetReference>
+                <targetReference>Set_Lead</targetReference>
             </connector>
             <label>Lead</label>
         </rules>
@@ -166,13 +182,14 @@
     <formulas>
         <name>ConsentGiverId</name>
         <dataType>String</dataType>
-        <expression>IF( ISNULL({!Lead.Id}),
+        <expression>IF({!AcctLead} == &apos;Account&apos;,
 {!Account.Id}
 ,
 {!Lead.Id}
 )</expression>
     </formulas>
     <interviewLabel>Tracey - Consent Management Query {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Tracey - Consent Management Query</label>
     <loops>
         <name>For_Each_Data_Use_Purpose</name>
@@ -379,6 +396,16 @@
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>AcctLead</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Account</stringValue>
+        </value>
     </variables>
     <variables>
         <name>AuthText</name>

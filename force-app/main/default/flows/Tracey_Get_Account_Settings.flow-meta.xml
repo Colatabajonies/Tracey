@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <assignments>
+        <name>Assign_Lead</name>
+        <label>Assign Lead</label>
+        <locationX>416</locationX>
+        <locationY>410</locationY>
+        <assignmentItems>
+            <assignToReference>AcctLead</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Lead</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Notifications_Enabled</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Notification_Status_Enabled</name>
         <label>Notification Status Enabled</label>
         <locationX>95</locationX>
@@ -151,7 +167,7 @@
     <formulas>
         <name>frmTemp</name>
         <dataType>String</dataType>
-        <expression>IF(ISNULL({!Lead.Id}),
+        <expression>IF({!AcctLead} == &apos;Account&apos;,
 IF({!Get_Account.Tracey_Bot_Last_Temperature__c} &gt; 0, TEXT({!Get_Account.Tracey_Bot_Last_Temperature__c}) &amp; &quot;*F (last reading &quot; &amp; TEXT(DATEVALUE({!Get_Account.Tracey_Bot_Last_Temp_Date__c})) &amp; &quot;)&quot;, &quot;No Data Available&quot;)
 ,
 IF({!Get_Lead.Tracey_Bot_Last_Temperature__c} &gt; 0, TEXT({!Get_Lead.Tracey_Bot_Last_Temperature__c}) &amp; &quot;*F (last reading &quot; &amp; TEXT(DATEVALUE({!Get_Lead.Tracey_Bot_Last_Temp_Date__c})) &amp; &quot;)&quot;, &quot;No Data Available&quot;)
@@ -160,7 +176,7 @@ IF({!Get_Lead.Tracey_Bot_Last_Temperature__c} &gt; 0, TEXT({!Get_Lead.Tracey_Bot
     <formulas>
         <name>FrmTempStatus</name>
         <dataType>String</dataType>
-        <expression>IF(ISNULL({!Lead.Id}),
+        <expression>IF({!AcctLead} == &apos;Account&apos;,
 &quot;Active (until &quot; &amp; TEXT(DATEVALUE({!Get_Account.Tracey_Bot_Virtual_Temp_StartDate__c}+14)) &amp; &quot;)&quot;
 ,
 &quot;Active (until &quot; &amp; TEXT(DATEVALUE({!Get_Lead.Tracey_Bot_Virtual_Temp_StartDate__c}+14)) &amp; &quot;)&quot;
@@ -172,6 +188,7 @@ IF({!Get_Lead.Tracey_Bot_Last_Temperature__c} &gt; 0, TEXT({!Get_Lead.Tracey_Bot
         <expression>{!$Flow.CurrentDateTime}-14</expression>
     </formulas>
     <interviewLabel>Tracey - Get Account Settings {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Tracey - Get Account Settings</label>
     <processMetadataValues>
         <name>BuilderType</name>
@@ -213,7 +230,7 @@ IF({!Get_Lead.Tracey_Bot_Last_Temperature__c} &gt; 0, TEXT({!Get_Lead.Tracey_Bot
         <locationY>262</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Is_Notifications_Enabled</targetReference>
+            <targetReference>Assign_Lead</targetReference>
         </connector>
         <filters>
             <field>Id</field>
@@ -241,6 +258,16 @@ IF({!Get_Lead.Tracey_Bot_Last_Temperature__c} &gt; 0, TEXT({!Get_Lead.Tracey_Bot
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>AcctLead</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Account</stringValue>
+        </value>
     </variables>
     <variables>
         <name>Lead</name>

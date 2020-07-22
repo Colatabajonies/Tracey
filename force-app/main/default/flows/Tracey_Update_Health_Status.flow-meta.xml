@@ -274,6 +274,7 @@
         </rules>
     </decisions>
     <interviewLabel>Tracey - Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Tracey - Update Health Status</label>
     <processMetadataValues>
         <name>BuilderType</name>

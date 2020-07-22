@@ -184,6 +184,7 @@
         <expression>RIGHT({!Get_MEU.Name}, LEN({!Get_MEU.Name}) -2)</expression>
     </formulas>
     <interviewLabel>Tracey - Get Person {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Tracey - Get Person</label>
     <processMetadataValues>
         <name>BuilderType</name>

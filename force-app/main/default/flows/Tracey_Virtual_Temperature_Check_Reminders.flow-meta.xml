@@ -90,6 +90,7 @@
         <expression>{!$Flow.CurrentDateTime}-14</expression>
     </formulas>
     <interviewLabel>Tracey - Virtual Temperature Check Reminders {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Tracey - Virtual Temperature Check Reminders</label>
     <loops>
         <name>For_Each_Account</name>
@@ -226,7 +227,7 @@
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>Account</name>
         <dataType>SObject</dataType>

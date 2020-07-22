@@ -27,6 +27,7 @@
         </assignmentItems>
     </assignments>
     <interviewLabel>Tracey - Enroll Lead {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Tracey - Enroll Lead</label>
     <processMetadataValues>
         <name>BuilderType</name>

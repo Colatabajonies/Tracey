@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Tracey_Bot_Virtual_Temp_StartDate__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>Tracey Bot - Virtual Temp StartDate</label>
     <required>false</required>

@@ -83,6 +83,7 @@
         </rules>
     </decisions>
     <interviewLabel>Tracey - Get Contact Encounters {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Tracey - Get Contact Encounters</label>
     <loops>
         <name>For_Each_Participant</name>

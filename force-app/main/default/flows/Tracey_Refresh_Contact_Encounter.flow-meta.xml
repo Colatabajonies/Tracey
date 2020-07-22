@@ -161,6 +161,7 @@
         <expression>{!Lead.FirstName} &amp; &quot; &quot; &amp; {!Lead.LastName}  &amp; &quot; - &quot; &amp; {!Lead.Email} &amp; SUBSTITUTE({!ttBreak}, &quot;~&quot;, &quot;&quot;)</expression>
     </formulas>
     <interviewLabel>Tracey - Refresh Contact Encounter {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Tracey - Refresh Contact Encounter</label>
     <loops>
         <name>Loop_Accounts</name>

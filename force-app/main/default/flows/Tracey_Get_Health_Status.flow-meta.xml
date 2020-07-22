@@ -89,6 +89,7 @@
         <expression>TEXT(DATEVALUE({!objLifeEvent.EventDate})) &amp; &apos; &apos; &amp; TEXT({!objLifeEvent.EventType}) &amp; SUBSTITUTE({!ttbreak}, &quot;~&quot;, &quot;&quot;)</expression>
     </formulas>
     <interviewLabel>Tracey - Get Health Status {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Tracey - Get Health Status</label>
     <loops>
         <name>For_Each_Life_Event</name>

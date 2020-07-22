@@ -27,6 +27,7 @@
         </assignmentItems>
     </assignments>
     <interviewLabel>Tracey - Create Care Program Enrollee {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Tracey - Enroll Person Account</label>
     <processMetadataValues>
         <name>BuilderType</name>

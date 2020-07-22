@@ -180,7 +180,7 @@
         <botSteps>
             <botVariableOperation>
                 <botInvocation>
-                    <invocationActionName>Tracey_Update_Health_Status</invocationActionName>
+                    <invocationActionName>TRACEY__Tracey_Update_Health_Status</invocationActionName>
                     <invocationActionType>flow</invocationActionType>
                     <invocationMappings>
                         <parameterName>Tested</parameterName>
@@ -302,7 +302,7 @@
         <botSteps>
             <botVariableOperation>
                 <botInvocation>
-                    <invocationActionName>Tracey_Get_Contact_Encounters</invocationActionName>
+                    <invocationActionName>TRACEY__Tracey_Get_Contact_Encounters</invocationActionName>
                     <invocationActionType>flow</invocationActionType>
                     <invocationMappings>
                         <parameterName>Account</parameterName>
@@ -332,7 +332,7 @@
                     <type>Redirect</type>
                 </invalidInputBotNavigation>
                 <optionalCollect>false</optionalCollect>
-                <quickReplyOptionTemplate>{!Tracey_StartTime_String__c} {!Tracey_Location_Name__c}: {!Name}</quickReplyOptionTemplate>
+                <quickReplyOptionTemplate>{!TRACEY__Tracey_StartTime_String__c} {!TRACEY__Tracey_Location_Name__c}: {!Name}</quickReplyOptionTemplate>
                 <quickReplyType>Dynamic</quickReplyType>
                 <quickReplyWidgetType>Buttons</quickReplyWidgetType>
                 <type>Collect</type>
@@ -523,7 +523,7 @@
         <botSteps>
             <botVariableOperation>
                 <botInvocation>
-                    <invocationActionName>Tracey_Get_Person</invocationActionName>
+                    <invocationActionName>TRACEY__Tracey_Get_Person</invocationActionName>
                     <invocationActionType>flow</invocationActionType>
                     <invocationMappings>
                         <parameterName>routableID</parameterName>
@@ -605,7 +605,7 @@
         <botSteps>
             <botVariableOperation>
                 <botInvocation>
-                    <invocationActionName>Tracey_Consent_Management_Query</invocationActionName>
+                    <invocationActionName>TRACEY__Tracey_Consent_Management_Query</invocationActionName>
                     <invocationActionType>flow</invocationActionType>
                     <invocationMappings>
                         <parameterName>Lead</parameterName>
@@ -843,7 +843,7 @@ Error Code: {!EnrolleeOutcome}</message>
         <botSteps>
             <botVariableOperation>
                 <botInvocation>
-                    <invocationActionName>Tracey_Enroll_Person_Account</invocationActionName>
+                    <invocationActionName>TRACEY__Tracey_Enroll_Person_Account</invocationActionName>
                     <invocationActionType>flow</invocationActionType>
                     <invocationMappings>
                         <parameterName>Account</parameterName>
@@ -973,7 +973,7 @@ Error Code: {!EnrolleeOutcome}</message>
         <botSteps>
             <botVariableOperation>
                 <botInvocation>
-                    <invocationActionName>Tracey_Set_Temperature</invocationActionName>
+                    <invocationActionName>TRACEY__Tracey_Set_Temperature</invocationActionName>
                     <invocationActionType>flow</invocationActionType>
                     <invocationMappings>
                         <parameterName>Account</parameterName>
@@ -1061,7 +1061,7 @@ Error Code: {!EnrolleeOutcome}</message>
         <label>Virtual Temperature Check</label>
         <mlIntent>Virtual_Temperature_Check</mlIntent>
         <mlIntentTrainingEnabled>false</mlIntentTrainingEnabled>
-        <showInFooterMenu>false</showInFooterMenu>
+        <showInFooterMenu>true</showInFooterMenu>
     </botDialogs>
     <botDialogs>
         <botDialogGroup>Settings</botDialogGroup>
@@ -1118,7 +1118,7 @@ Error Code: {!EnrolleeOutcome}</message>
         <botSteps>
             <botVariableOperation>
                 <botInvocation>
-                    <invocationActionName>Tracey_Get_Account_Settings</invocationActionName>
+                    <invocationActionName>TRACEY__Tracey_Get_Account_Settings</invocationActionName>
                     <invocationActionType>flow</invocationActionType>
                     <invocationMappings>
                         <parameterName>Lead</parameterName>
@@ -1189,7 +1189,7 @@ Last Temperature Reading: {!Temperature}</message>
         <label>My Settings</label>
         <mlIntent>My_Settings</mlIntent>
         <mlIntentTrainingEnabled>false</mlIntentTrainingEnabled>
-        <showInFooterMenu>false</showInFooterMenu>
+        <showInFooterMenu>true</showInFooterMenu>
     </botDialogs>
     <botDialogs>
         <botDialogGroup>Health_Status</botDialogGroup>
@@ -1246,7 +1246,7 @@ Last Temperature Reading: {!Temperature}</message>
         <botSteps>
             <botVariableOperation>
                 <botInvocation>
-                    <invocationActionName>Tracey_Get_Health_Status</invocationActionName>
+                    <invocationActionName>TRACEY__Tracey_Get_Health_Status</invocationActionName>
                     <invocationActionType>flow</invocationActionType>
                     <invocationMappings>
                         <parameterName>Lead</parameterName>
@@ -1341,7 +1341,7 @@ Life events:
         </botSteps>
         <developerName>My_Health_Status</developerName>
         <label>My Health Status</label>
-        <showInFooterMenu>false</showInFooterMenu>
+        <showInFooterMenu>true</showInFooterMenu>
     </botDialogs>
     <botDialogs>
         <botDialogGroup>Initialize</botDialogGroup>
@@ -1593,7 +1593,7 @@ Life events:
         <botSteps>
             <botVariableOperation>
                 <botInvocation>
-                    <invocationActionName>Tracey_Create_Contact_Encounter</invocationActionName>
+                    <invocationActionName>TRACEY__Tracey_Create_Contact_Encounter</invocationActionName>
                     <invocationActionType>flow</invocationActionType>
                     <invocationMappings>
                         <parameterName>Account</parameterName>
@@ -1823,7 +1823,7 @@ Life events:
         <botSteps>
             <botVariableOperation>
                 <botInvocation>
-                    <invocationActionName>Tracey_Refresh_Contact_Encounter</invocationActionName>
+                    <invocationActionName>TRACEY__Tracey_Refresh_Contact_Encounter</invocationActionName>
                     <invocationActionType>flow</invocationActionType>
                     <invocationMappings>
                         <parameterName>EncounterIn</parameterName>
@@ -1845,7 +1845,7 @@ Life events:
         <botSteps>
             <botMessages>
                 <message>{!Encounter.Name}
-{!Encounter.Tracey_StartTime_String__c}
+{!Encounter.TRACEY__Tracey_StartTime_String__c}
 
 {!Encounter.ActualParticipantCount} Participant(s):
 {!Encounter.Description}</message>
@@ -1930,7 +1930,7 @@ Life events:
         <botSteps>
             <botVariableOperation>
                 <botInvocation>
-                    <invocationActionName>Tracey_Lookup_Lead_by_Email</invocationActionName>
+                    <invocationActionName>TRACEY__Tracey_Lookup_Lead_by_Email</invocationActionName>
                     <invocationActionType>flow</invocationActionType>
                     <invocationMappings>
                         <parameterName>ExternalEmail</parameterName>
@@ -1969,7 +1969,7 @@ Life events:
         <botSteps>
             <botVariableOperation>
                 <botInvocation>
-                    <invocationActionName>Tracey_Add_Lead_Encounter_Participant</invocationActionName>
+                    <invocationActionName>TRACEY__Tracey_Add_Lead_Encounter_Participant</invocationActionName>
                     <invocationActionType>flow</invocationActionType>
                     <invocationMappings>
                         <parameterName>Encounter</parameterName>
@@ -2132,7 +2132,7 @@ Life events:
         <botSteps>
             <botVariableOperation>
                 <botInvocation>
-                    <invocationActionName>Tracey_Create_Lead</invocationActionName>
+                    <invocationActionName>TRACEY__Tracey_Create_Lead</invocationActionName>
                     <invocationActionType>flow</invocationActionType>
                     <invocationMappings>
                         <parameterName>LastName</parameterName>
@@ -2208,7 +2208,7 @@ Life events:
         <botSteps>
             <botVariableOperation>
                 <botInvocation>
-                    <invocationActionName>Tracey_Add_Lead_Encounter_Participant</invocationActionName>
+                    <invocationActionName>TRACEY__Tracey_Add_Lead_Encounter_Participant</invocationActionName>
                     <invocationActionType>flow</invocationActionType>
                     <invocationMappings>
                         <parameterName>Encounter</parameterName>
@@ -2287,7 +2287,7 @@ Life events:
         <botSteps>
             <botVariableOperation>
                 <botInvocation>
-                    <invocationActionName>Tracey_Set_Account_Settings</invocationActionName>
+                    <invocationActionName>TRACEY__Tracey_Set_Account_Settings</invocationActionName>
                     <invocationActionType>flow</invocationActionType>
                     <invocationMappings>
                         <parameterName>Account</parameterName>
@@ -2376,7 +2376,7 @@ Life events:
         <botSteps>
             <botVariableOperation>
                 <botInvocation>
-                    <invocationActionName>Tracey_Set_Account_Settings</invocationActionName>
+                    <invocationActionName>TRACEY__Tracey_Set_Account_Settings</invocationActionName>
                     <invocationActionType>flow</invocationActionType>
                     <invocationMappings>
                         <parameterName>Account</parameterName>
@@ -2465,7 +2465,7 @@ Life events:
         <botSteps>
             <botVariableOperation>
                 <botInvocation>
-                    <invocationActionName>Tracey_Set_Account_Settings</invocationActionName>
+                    <invocationActionName>TRACEY__Tracey_Set_Account_Settings</invocationActionName>
                     <invocationActionType>flow</invocationActionType>
                     <invocationMappings>
                         <parameterName>Account</parameterName>
@@ -2554,7 +2554,7 @@ Life events:
         <botSteps>
             <botVariableOperation>
                 <botInvocation>
-                    <invocationActionName>Tracey_Set_Account_Settings</invocationActionName>
+                    <invocationActionName>TRACEY__Tracey_Set_Account_Settings</invocationActionName>
                     <invocationActionType>flow</invocationActionType>
                     <invocationMappings>
                         <parameterName>Account</parameterName>
@@ -2677,14 +2677,14 @@ Life events:
         </botSteps>
         <developerName>My_Encounters</developerName>
         <label>My Encounters</label>
-        <showInFooterMenu>true</showInFooterMenu>
+        <showInFooterMenu>false</showInFooterMenu>
     </botDialogs>
     <botDialogs>
         <botDialogGroup>Initialize</botDialogGroup>
         <botSteps>
             <botVariableOperation>
                 <botInvocation>
-                    <invocationActionName>Tracey_Enroll_Lead</invocationActionName>
+                    <invocationActionName>TRACEY__Tracey_Enroll_Lead</invocationActionName>
                     <invocationActionType>flow</invocationActionType>
                     <invocationMappings>
                         <parameterName>CareProgram</parameterName>
@@ -2780,7 +2780,7 @@ Life events:
         <botSteps>
             <botVariableOperation>
                 <botInvocation>
-                    <invocationActionName>Tracey_Get_Account_Settings</invocationActionName>
+                    <invocationActionName>TRACEY__Tracey_Get_Account_Settings</invocationActionName>
                     <invocationActionType>flow</invocationActionType>
                     <invocationMappings>
                         <parameterName>Lead</parameterName>

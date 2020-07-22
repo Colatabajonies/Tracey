@@ -45,5 +45,9 @@
         <members>Tracey</members>
         <name>Bot</name>
     </types>
+    <types>
+        <members>Tracey_Bot_Admin</members>
+        <name>PermissionSet</name>
+    </types>
     <version>48.0</version>
 </Package>

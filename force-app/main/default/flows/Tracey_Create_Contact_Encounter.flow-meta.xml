@@ -14,6 +14,7 @@
         </assignmentItems>
     </assignments>
     <interviewLabel>Tracey - Create Contact Encounter {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Tracey - Create Contact Encounter</label>
     <processMetadataValues>
         <name>BuilderType</name>
