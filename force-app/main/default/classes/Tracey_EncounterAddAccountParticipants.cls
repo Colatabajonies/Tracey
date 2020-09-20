@@ -58,7 +58,7 @@ global with sharing class Tracey_EncounterAddAccountParticipants
         return results;
     }
     
-    global class addEParticipantsRequest
+    global with sharing class addEParticipantsRequest
     {
         @InvocableVariable(required=true)
         global ContactEncounter Encounter;

@@ -41,7 +41,7 @@ global with sharing class Tracey_GetEncounterParticipants
         
     }
     
-    global class getEParticipantsResult
+    global with sharing class getEParticipantsResult
     {
         @InvocableVariable(required=false)
         global List<Account> Accounts;
