@@ -44,6 +44,16 @@
             </mlIntentUtterances>
         </mlIntents>
         <mlIntents>
+            <developerName>Transfer_To_Agent</developerName>
+            <label>Transfer To Agent</label>
+            <mlIntentUtterances>
+                <utterance>agent</utterance>
+            </mlIntentUtterances>
+            <mlIntentUtterances>
+                <utterance>transfer to agent</utterance>
+            </mlIntentUtterances>
+        </mlIntents>
+        <mlIntents>
             <developerName>Update_Health_Status</developerName>
             <label>Update Health Status</label>
             <mlIntentUtterances>

@@ -367,7 +367,13 @@
         </botSteps>
         <botSteps>
             <botMessages>
-                <message>Hi there, I&apos;m Tracey, a friendly contact tracing chatbot. I can do things like keep you informed of exposures, help you report encounters, and keep your overall health status up-to-date.</message>
+                <message>Hi there, I&apos;m Tracey, a friendly contact tracing chatbot. I am contacting you on behalf of [ORGANIZATION]. I can do things like keep you informed of exposures, help you report encounters, and keep your overall health status up-to-date.</message>
+            </botMessages>
+            <type>Message</type>
+        </botSteps>
+        <botSteps>
+            <botMessages>
+                <message>We care about your privacy, so the information you provide will be protected.</message>
             </botMessages>
             <type>Message</type>
         </botSteps>
@@ -434,6 +440,68 @@
     </botDialogs>
     <botDialogs>
         <botSteps>
+            <botSteps>
+                <botVariableOperation>
+                    <botVariableOperands>
+                        <targetName>ChatYesNo</targetName>
+                        <targetType>ConversationVariable</targetType>
+                    </botVariableOperands>
+                    <type>Unset</type>
+                </botVariableOperation>
+                <type>VariableOperation</type>
+            </botSteps>
+            <type>Group</type>
+        </botSteps>
+        <botSteps>
+            <botMessages>
+                <message>You can call [PHONE NUMBER] to speak directly with a contact tracer.</message>
+            </botMessages>
+            <type>Message</type>
+        </botSteps>
+        <botSteps>
+            <botVariableOperation>
+                <botMessages>
+                    <message>Alternatively, we can connect you with a contact tracer over chat. Would you like to be connected to a contact tracer?</message>
+                </botMessages>
+                <botQuickReplyOptions>
+                    <literalValue>Yes</literalValue>
+                </botQuickReplyOptions>
+                <botQuickReplyOptions>
+                    <literalValue>No</literalValue>
+                </botQuickReplyOptions>
+                <botVariableOperands>
+                    <disableAutoFill>true</disableAutoFill>
+                    <sourceName>YesNo</sourceName>
+                    <sourceType>MlSlotClass</sourceType>
+                    <targetName>ChatYesNo</targetName>
+                    <targetType>ConversationVariable</targetType>
+                </botVariableOperands>
+                <optionalCollect>false</optionalCollect>
+                <quickReplyType>Static</quickReplyType>
+                <quickReplyWidgetType>Menu</quickReplyWidgetType>
+                <type>Collect</type>
+            </botVariableOperation>
+            <type>VariableOperation</type>
+        </botSteps>
+        <botSteps>
+            <botStepConditions>
+                <leftOperandName>ChatYesNo</leftOperandName>
+                <leftOperandType>ConversationVariable</leftOperandType>
+                <operatorType>Equals</operatorType>
+                <rightOperandValue>No</rightOperandValue>
+            </botStepConditions>
+            <botSteps>
+                <botNavigation>
+                    <botNavigationLinks>
+                        <targetBotDialog>Welcome</targetBotDialog>
+                    </botNavigationLinks>
+                    <type>Redirect</type>
+                </botNavigation>
+                <type>Navigation</type>
+            </botSteps>
+            <type>Group</type>
+        </botSteps>
+        <botSteps>
             <conversationSystemMessage>
                 <type>Transfer</type>
             </conversationSystemMessage>
@@ -441,6 +509,8 @@
         </botSteps>
         <developerName>Transfer_To_Agent</developerName>
         <label>Transfer To Agent</label>
+        <mlIntent>Transfer_To_Agent</mlIntent>
+        <mlIntentTrainingEnabled>false</mlIntentTrainingEnabled>
         <showInFooterMenu>false</showInFooterMenu>
     </botDialogs>
     <botDialogs>
@@ -1521,7 +1591,7 @@ Life events:
         <botSteps>
             <botVariableOperation>
                 <botMessages>
-                    <message>First, respond with a name that describes a meeting or business gathering you&apos;ve had in the past 14 days where you&apos;ve had sustained close contact with others (ie &quot;Strategy Meeting&quot;, or &quot;Client Lunch&quot;)</message>
+                    <message>First, respond with a name that describes a gathering you&apos;ve had in the past 14 days where you&apos;ve had sustained close contact with others (for example, &quot;Strategy Meeting&quot;, or &quot;Lunch&quot;)</message>
                 </botMessages>
                 <botVariableOperands>
                     <disableAutoFill>true</disableAutoFill>
@@ -2773,7 +2843,7 @@ Life events:
         </botSteps>
         <botSteps>
             <botMessages>
-                <message>Thanks. Based on your answers, we don&apos;t have to trace your contacts. If your condition changes, please return to this thread to update your health status.</message>
+                <message>Thanks. Based on your answers, we don&apos;t have to trace your contacts. If your condition changes, please return to this thread and reply &quot;TRACE&quot; to update your health status.</message>
             </botMessages>
             <type>Message</type>
         </botSteps>
@@ -2986,6 +3056,11 @@ Life events:
         <dataType>Text</dataType>
         <developerName>Channel</developerName>
         <label>Channel</label>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <developerName>ChatYesNo</developerName>
+        <label>ChatYesNo</label>
     </conversationVariables>
     <conversationVariables>
         <dataType>Text</dataType>
